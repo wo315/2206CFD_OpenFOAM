@@ -1,0 +1,18 @@
+How to run me:
+
+dakota -i dakota_case.in
+
+or
+
+dakota -i dakota_case.in | tee log.dakota
+dakota -i dakota_case.in -o log.dakota_stdout > log.stdout | tail -f log.stdout
+dakota -i dakota_case.in -o log.dakota_stdout | tee log.dakota
+dakota -i dakota_case.in -o log.dakota_stdout -e log.dakota_stderror | tee log.stdout
+dakota -i dakota_case.in -o log.dakota_stdout -e log.dakota_stderror > log.stdout 2>&1
+dakota -i dakota_case.in -o log.dakota_stdout -e log.dakota_stderror 2>&1 | tee log.stdout     #Maybe the best option
+
+
+
+This is a SBO case
+To construct the surrogate use an input file with no interface column or freeform format
+It does not work when using input file with interface column check this
